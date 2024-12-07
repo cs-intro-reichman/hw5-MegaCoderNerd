@@ -137,9 +137,9 @@
 				 
 		 }
 		 if (hand.length() == 0) {
-			 System.out.println("Ran out of letters. Total score: " + score + " points");
+			 System.out.println("Ran out of letters. Total score: " + score + " points\n");
 		 } else {
-			 System.out.println("End of hand. Total score: " + score + " points");
+			 System.out.println("End of hand. Total score: " + score + " points\n");
 		 }
 	 }
  
