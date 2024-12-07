@@ -132,7 +132,7 @@
 			 hand = MyString.remove(hand, input);
 			 handLen -= input.length();
 			 score += wordScore(input);
-			 System.out.printf("%s earned %d points. Score: %d points\n", input, wordScore(input), score);
+			 System.out.printf("%s earned %d points. Score: %d points\n\n", input, wordScore(input), score);
  
 				 
 		 }
