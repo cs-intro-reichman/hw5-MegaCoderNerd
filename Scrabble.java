@@ -51,7 +51,7 @@
  
 	 // Checks if the given word is in the dictionary.
 	 public static boolean isWordInDictionary(String word) {
-		 word = word.toLowerCase();
+		 //word = word.toLowerCase();
 		 // we iterate through the dictionary and compare to the word given
 		 for (int i = 0; i < DICTIONARY.length; i++){
 			 if (word.equals(DICTIONARY[i])) return true;
@@ -70,18 +70,11 @@
 			 // and we use that index to get the point value of the word
 			 points += SCRABBLE_LETTER_VALUES[word.charAt(i) - 'a'];
 		 }
+		 // the points are multiplied by the length of the word
+		 points *= word.length();
 		 String bonusPoints = "runi";
-		 for (int i = 0; i < word.length()-bonusPoints.length(); i++){
-			 // we make substrings of the length of the bonus word 
-			 // in this case it's runi and then compare them to it
-			 String subS = word.substring(i, i+bonusPoints.length());
-			 // if we find the bonus word in the string 
-			 // we add 1000 points and exit the loop
-			 if(subS.equals(bonusPoints)){
-				 points += 1000;
-				 break;
-			 } 
-		 }
+		 // if runi is in the word we add 1000 points
+		 if (MyString.subsetOf(bonusPoints, word)) points += 1000;
  
 		 return points;
 	 }
