@@ -129,6 +129,7 @@
 			 if (input.equals(".")) break;
 			 // remove the played word's letters from the hand
 			 // decrease the size of the current hand and increase the score
+			 System.out.println("The word is: " + input);
 			 hand = MyString.remove(hand, input);
 			 handLen -= input.length();
 			 score += wordScore(input);
