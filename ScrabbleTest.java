@@ -2,6 +2,7 @@
 
 public class ScrabbleTest {
     public static void main(String[] args) {
+        args = new String[] {"playHandWithMockInput"};
         if (args.length == 0) {
             System.out.println("Please provide a specific test to run: isWordInDictionary, wordScore, createHand, playHand, playHandWithMockInput, or playGameWithMockInput.");
             return;
