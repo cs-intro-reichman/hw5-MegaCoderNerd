@@ -118,7 +118,7 @@
 			 // or the word has characters outside of the hand
 			 // ask for another input
 			 while (!isWordInDictionary(input) || !MyString.subsetOf(input, hand)){
-				 System.out.println("Word is invalid please try again!");
+				 System.out.println("Invalid word. Try again.");
 				 System.out.println("Current Hand: " + MyString.spacedString(hand));
 				 System.out.println("Enter a word, or '.' to finish playing this hand:");
 				 input = in.readString();
@@ -129,7 +129,7 @@
 			 if (input.equals(".")) break;
 			 // remove the played word's letters from the hand
 			 // decrease the size of the current hand and increase the score
-			 System.out.println("The word is: " + input);
+			 System.out.printf("%s earned 25 %d. Score: 25 %d", input, wordScore(input), score);
 			 hand = MyString.remove(hand, input);
 			 handLen -= input.length();
 			 score += wordScore(input);
