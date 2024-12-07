@@ -63,8 +63,7 @@
 	 // If the length of the word equals the length of the hand, adds 50 points to the score.
 	 // If the word includes the sequence "runi", adds 1000 points to the game.
 	 public static int wordScore(String word) {
-		 // assigning 50 points if the word length is the hand size otherwise 0
-		 int points = word.length() == HAND_SIZE ? 50: 0;
+		 int points = 0;
 		 for (int i = 0; i < word.length(); i++){
 			 // we convert the curr char into it's alphabet placement index
 			 // and we use that index to get the point value of the word
@@ -72,6 +71,8 @@
 		 }
 		 // the points are multiplied by the length of the word
 		 points *= word.length();
+		 // add 50 if the word length is the hand size
+		 points += word.length() == HAND_SIZE ? 50: 0;
 		 String bonusPoints = "runi";
 		 // if runi is in the word we add 1000 points
 		 if (MyString.subsetOf(bonusPoints, word)) points += 1000;
